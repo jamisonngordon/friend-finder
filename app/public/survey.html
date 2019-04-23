@@ -4,9 +4,181 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
+    <form style="padding: 30px;" class="col-6 mx-auto">
+        <h2>Survey</h2>
+        <p>Every question is required.</p>
+        <hr>
 
+        <h3>Personal info</h3>
+        <label for="name">Name:</label>
+        <input id="name" class="form-control" required>
+
+        <label for="picture">Picture: </label>
+        <input id="picture" class="form-control" required>
+
+        <h3>Preferences</h3>
+        <label for="q1">Like sports</label>
+        <select class="form-control" id="q1" required>
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <label for="q2">Like doing laundry</label>
+        <select class="form-control" id="q2" required>
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <label for="q3">Like pinatas</label>
+        <select class="form-control" id="q3" required>
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <label for="q4">Like aggressive humor</label>
+        <select class="form-control" id="q4" required>
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <label for="q5">Like doing handstands</label>
+        <select class="form-control" id="q5" required>
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <label for="q6">Like the idea of a space force</label>
+        <select class="form-control" id="q6" required>
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <label for="q7">Like marvel movies</label>
+        <select class="form-control" id="q7" required>
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <label for="q8">Like licorice</label>
+        <select class="form-control" id="q8" required>
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <label for="q9">Like changing your own oil</label>
+        <select class="form-control" id="q9" required>
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <label for="q10">Like sports</label>
+        <select class="form-control" id="q10" required>
+            <option value=""></option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+
+        <button type="button" id="submit" class="col-12 btn btn-primary mt-3">Submit Form</button>
+
+    </form>
+
+    <div id="modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="friend-img" class="mx-auto d-block">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        label {
+            margin-top: 8px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $('#submit').click(submitForm);
+        });
+
+        function submitForm() {
+
+            let questions = {};
+            questions.data = [];
+            questions.data[0] = $('#q1').val();
+            questions.data[1] = $('#q2').val();
+            questions.data[2] = $('#q3').val();
+            questions.data[3] = $('#q4').val();
+            questions.data[4] = $('#q5').val();
+            questions.data[5] = $('#q6').val();
+            questions.data[6] = $('#q7').val();
+            questions.data[7] = $('#q8').val();
+            questions.data[8] = $('#q9').val();
+            questions.data[9] = $('#q10').val();
+
+            $.post( "/api/friends", questions, function(response) {
+
+                $('#modal-title').text(response.name);
+                $('#friend-img').attr('src', response.photo);
+
+                $('#modal').modal('show');
+            });
+
+        }
+    </script>
 </body>
 </html>
